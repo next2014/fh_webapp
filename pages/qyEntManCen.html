@@ -1,0 +1,41 @@
+---
+layout: pages
+title: 企业管理中心
+---
+<header class="search">
+  <div class="search_header search_bg_Ter_Whi">
+   <div class="search_header_box">
+        <div class="search_left"><a href="index.html"><i class="fa fa-angle-left fa-lg"></i></a></div>
+        <div class="search_center"><a href="javascript:"> 企业管理中心 </a></div>
+        <div class="search_right"></div>
+   </div>
+  </div>
+</header>
+<div class="qyEntManCen">
+    <div class="mod_pos_item">
+        <div class="weui-cells">
+            <div class="weui-cell weui-cell_select">
+                <div class="page__hd">
+                    <h1 class="page__title">尊敬的惠州锦胜房地产开发有限公司</h1>
+                    <!-- 已是会员 显示 -->
+                    <p class="text-justify">非常感谢成为我们的<span class="bg-light text-primary">网络会员</span>，贵企业的服务日期是从<span class="bg-light text-primary"><em>2016-07-04</em> 到 <em>2019-08-04</em></span>在这期间，您还可发布<span class="bg-light text-primary">30</span>个有效职位，可查看<span class="bg-light text-primary">192</span>份求职简历（共200份，已查看8份）。</p>
+                    <!-- 非会员 显示-->
+                    <p class="text-justify bg-light text-primary p-2 mt-1 mb-1">对不起,因为贵企业的服务期限（<em>2016-07-04</em> 到 <em>2018-08-04</em>）已过,所以有部分的功能暂时还不能使用,请联系我们办理相关会员手续!</p>
+                    <p class="text-justify">另:为您服务的客户经理是:<span class="bg-light text-primary">王榕（<em>Tel:0752-5766306，Email:3339853164@qq.com</em>）</span>如有不满意的地方,
+                    请直接拨打投诉直线0752-5766306（肖小姐）。
+                    </p>
+                </div>
+            </div>
+        	{% for mancen in site.data.qyEntManCen %}
+            <a href="{{ mancen.url }}" class="weui-cell weui-cell_select">
+                <div class="weui-cell__hd">
+                    <label for="name" class="weui-label w-100">{{ mancen.title }}</label>
+                </div>
+                <div class="weui-cell__bd">
+                   <p class="text-primary">{{ mancen.num }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

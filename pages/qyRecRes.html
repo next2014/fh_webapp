@@ -1,0 +1,54 @@
+---
+layout: pages
+title: 推荐简历
+---
+<header class="search">
+<div class="search_header search_bg_Ter_Whi">
+ <div class="search_header_box">
+	<div class="search_left"><a href="index.html"><i class="fa fa-angle-left fa-lg"></i></a></div>
+	<div class="search_center"><a href="javascript:"> 推荐简历 </a></div>
+	<div class="search_right"></div>
+ </div>
+</div>
+</header>
+<div class="qyRecRes">
+ <div class="weui-panel weui-panel_access">
+	<div class="weui-panel__bd">
+	{% for ind in site.data.index %}
+	<div class="lists">
+	  <div class="weui-media-box">
+		<div class="weui-media-box__hd">
+		  <img class="weui-media-box__thumb" src="{{ ind.imgurl }}" alt="">
+		</div>
+		<div class="weui-media-box__bd">
+		 <div class="weui-media-box__title">
+			<h4><a href="qyResumeView.html">{{ ind.name }}</a></h4>
+			<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-animation="true" title="已查看简历！">
+				<button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>阅</button>
+				</span>
+				<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-animation="true" title="已查看简历联系方式！">
+				<button class="btn btn-warning" style="pointer-events: none;" type="button" disabled>载</button>
+				</span>
+				<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-animation="true" title="简历属于微信简历！">
+				<button class="btn btn-success" style="pointer-events: none;" type="button" disabled><i class="fa fa-weixin"></i></button>
+				</span>
+				<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-animation="true" title="简历附有个人照片！">
+				<button class="btn btn-info" style="pointer-events: none;" type="button" disabled><i class="fa fa-image "></i></button>
+			</span>
+		 </div>
+		<ul class="weui-media-box__info">
+			<li class="weui-media-box__info__meta text-warning">{{ ind.sex }}</li>
+			<li class="weui-media-box__info__meta weui-media-box__info__meta_extra"">{{ ind.old }}岁</li>
+			<li class="weui-media-box__info__meta weui-media-box__info__meta_extra">经验{{ ind.emp }}年</li>
+			<li class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{ ind.edu }}</li>
+		</ul>
+		<p class="weui-cells__tips">期望工作地点：{{ ind.city }}</p>
+		<p class="weui-cells__tips">毕业于：{{ind.sch}}</p>
+		<p class="weui-cells__tips">{{ site.time | date_to_xmlschem }} 更新</p>
+		</div>
+	  </div>
+	</div>
+	{% endfor %}
+	</div>
+ </div>
+</div>

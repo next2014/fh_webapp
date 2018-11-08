@@ -1,0 +1,37 @@
+---
+layout: pages
+titile: 安排职位
+---
+<header class="search">
+		<div class="search_header search_bg_Ter_Whi">
+		 <div class="search_header_box">
+					<div class="search_left"><a href="index.html"><i class="fa fa-angle-left fa-lg"></i></a></div>
+					<div class="search_center"><a href="javascript:"> 安排职位 </a></div>
+					<div class="search_right"></div>
+		 </div>
+		</div>
+</header>
+<div class="qyEntTalPos">
+			<div class="mod_pos_item pr-0">
+					<div class="weui-cells">
+					{% for zw in site.data.qyZW %}
+					<div class="weui-cell weui-cells_checkbox">
+						<label class="weui-check__label d-flex align-items-center w-100" for="{{ zw.id }}">
+								<div class="weui-cell__hd">
+										<input type="checkbox" class="weui-check checkOne" onclick="clickOne()" id="{{ zw.id }}">
+										<i class="weui-icon-checked"></i>
+								</div>
+								<div class="weui-cell__bd text-left">
+										<h2>{{ zw.pos }}</h2>
+								</div>
+						</label> 
+					</div>
+					{% endfor %}
+					</div>
+			</div>
+			<!-- 底部按钮 -->
+			<section class="mod_pos_btn">
+				<div class="mod_pos_btn_air"><a href="javascript:;">保存</a></div>
+				<div class="mod_pos_btn_rea"><a href="javascript:;">取消</a></div>
+			</section>
+</div>

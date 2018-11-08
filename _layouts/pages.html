@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include qy-head.html %}
+  </head>
+  <body>
+      {% include common/qy-search.html %}
+      {{ content }}
+      {% if page.layout == "qyMine/index" or page.layout == "qyMine/qyNews" or page.layout == "qyMine/qySite" or page.layout == "qyMine/qyMine" %}
+        {% include common/qy-menu.html %}
+      {% endif %}
+  </body>
+  {% include qy-script.html %}
+  {% if page.layout == "qyMine/index" %}
+     <script src="../static/js/swiper.js"></script>
+     {% include components/swiper/SwiperJs.html %}
+     {% include script/indexJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qySearchSelect" %}
+     {% include script/qySearchSelectJS.html  %}
+  {% endif %}
+  {% if page.layout == "qyMine/qySearchList" %}
+     {% include script/indexJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyLogEdit" %}
+    <script src="../static/js/weui.min.js"></script>
+    <script src="../static/js/gallery.js"></script>
+     {% include script/qyLogEditJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyCorInfFuliEdit" %}
+     {% include script/qyPostManJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyCorInf" %}
+     {% include script/comAlbJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyResumeShou" %}
+     {% include script/remarksJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyResumeView" %}
+     <script src="../static/js/swiper.js"></script>
+     {% include script/tabsJs.html %}
+  {% endif %}
+  {% if page.layout == "qyMine/qyEntTalPoo" or page.layout == "qyMine/qyInvInterRec" or page.layout == "qyMine/qyJobRecycle" or page.layout == "qyMine/qyPostMan" or page.layout == "qyMine/qyRecPos" %}
+    {% include script/qyTopSearchJs.html %}
+  {% endif %}
+  <script src="../static/js/common.js"></script>
+</html>

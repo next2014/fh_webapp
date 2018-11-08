@@ -1,0 +1,19 @@
+<!-- 底部导航 -->
+<nav class="menu">
+    <a href="index.html" class="{% if page.layout == "home" %} active {% endif %}">
+        <i class="fa fa-home"></i><span>首页</span>
+        <em class="weui-badge" hidden>0</em>
+    </a>
+    <a href="news.html" class="{% if page.layout == "news" %} active {% endif %}">
+        <i class="fa fa-commenting-o"></i><span>消息</span>
+        <em class="weui-badge text-truncate">180</em>
+    </a>
+    <a href="site.html" class="{% if page.layout == "site" %} active {% endif %}">
+        <i class="fa fa-newspaper-o"></i><span>现场</span>
+        <em class="weui-badge">99</em>
+    </a>
+    <a href="mine.html" class="{% if page.layout == "mine" %} active {% endif %}">
+        <i class="fa fa-meh-o"></i><span>我</span>
+        <em class="weui-badge weui-badge_dot"></em>
+    </a>
+</nav>

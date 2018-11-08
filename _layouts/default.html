@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+    {% if page.layout == "pages/searchTer" or page.layout == "pages/subscribe" %}
+       <link rel="stylesheet" href="static/css/selecter.css">
+    {% endif %}
+</head>
+<body>
+    {% include common/search.html %}
+    {{ content }}
+    {% if page.layout == "home" or page.layout == "news" or page.layout == "site" or page.layout == "mine" or page.layout == "pages/mineJobSearch" or page.layout == "pages/mineCorRes" %}
+       {% include common/menu.html %}
+    {% endif %}
+    {% if page.layout == "404" or page.layout == "indexListTer" or page.layout == "resume" %}
+    {% endif %}
+</body>
+   {% include script.html %}
+   {% if page.layout == "home" %}
+       <script src="static/js/swiper.js"></script>
+       {% include components/swiper/swiperjs.html %}
+       {% include script/homeJs.html %}
+       {% include fastclickjs.html %}
+   {% endif %}
+   {% if page.layout == "pages/searchTer" %}
+       {% include components/offcanvas/offcanvas1js.html %}
+   {% endif %}
+   {% if page.layout == "pages/positionDetail" %}
+      {% include script/positionDetailJs.html %}
+   {% endif %}
+   {% if page.layout == "pages/companyDetail" %}
+      {% include script/companyDetailJs.html %}
+      {% include fastclickjs.html %}
+   {% endif %}
+   {% if page.layout == "mine/mineResumeEdit" %}
+       {% include script/mineResumeEditJs.html %}
+   {% endif %}
+   {% if page.layout == "logReg/register" %}
+       {% include fastclickjs.html %}
+       {% include script/registerJs.html %}
+   {% endif %}
+   {% if page.layout == "mine/mineDelivery" %}
+        {% include script/mineDeliveryJs.html %}
+        {% include fastclickjs.html %}
+   {% endif %}
+   {% if page.layout == "pages/subscribe" %}
+        {% include script/subscribeJs.html %}
+   {% endif %}
+   {% if page.layout == "pages/companyAddr" or page.layout == "mine/mineSetCenter" or page.layout == "logReg/resume" or page.layout == "logReg/resumeQzyx" or page.layout == "logReg/resumePerfect" or page.layout == "logReg/resumePerfectStr" or page.layout == "logReg/resumeCompany"  %}
+     <script src="static/js/city-picker.min.js"></script>
+     <script src="static/js/model.js"></script>
+   {% endif %}
+   <!-- <script src="static/js/common.js"></script> -->
+</html>
